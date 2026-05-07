@@ -20,4 +20,3 @@
   "include": ["src", "scripts", "tests", "vite.config.ts", "eslint.config.js"],
   "references": []
 }
-

@@ -26,4 +26,3 @@ Species records include:
 Breaking changes create a new path, such as `/data/v2/`.
 
 Because this is Mode A, data is committed and served by GitHub Pages. `make data` validates the static files and updates metadata if needed.
-

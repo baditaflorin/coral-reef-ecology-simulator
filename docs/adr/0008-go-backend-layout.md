@@ -20,4 +20,3 @@ Skip Go backend directories in Mode A. There is no `cmd/`, `internal/`, `pkg/`, 
 ## Alternatives Considered
 
 - Empty Go skeleton: rejected because it would imply a backend that does not exist.
-

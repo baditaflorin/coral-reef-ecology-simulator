@@ -21,4 +21,3 @@ Use Vitest for unit tests, Playwright for one happy-path smoke test, and `script
 ## Alternatives Considered
 
 - Manual-only testing: rejected because trophic logic can regress silently.
-

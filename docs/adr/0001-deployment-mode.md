@@ -25,4 +25,3 @@ The app is a static Vite build published from `main` branch `/docs`. Simulation 
 
 - Mode B: Rejected for v1 because all species data is small and static.
 - Mode C: Rejected because no runtime API is required.
-

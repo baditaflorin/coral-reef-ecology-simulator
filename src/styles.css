@@ -1,0 +1,520 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  background: #061618;
+  color: #f5fbf8;
+  font-synthesis: none;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 143, 126, 0.08), transparent 24%),
+    linear-gradient(135deg, rgba(39, 192, 166, 0.1), transparent 42%),
+    linear-gradient(180deg, rgba(6, 22, 24, 0.72), rgba(7, 31, 29, 0.9)),
+    #061618;
+}
+
+button,
+a,
+input {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: progress;
+  opacity: 0.68;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 100vh;
+  padding: 16px;
+}
+
+.app-header {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  min-height: 72px;
+}
+
+.app-header h1,
+.loading-screen h1,
+.fatal-error h1 {
+  margin: 0;
+  color: #fff8ef;
+  font-size: clamp(1.45rem, 3vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.05;
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  color: #8ee7d8;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.header-actions,
+.button-row,
+.status-grid {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.header-actions a,
+.icon-button {
+  align-items: center;
+  border: 1px solid rgba(245, 251, 248, 0.16);
+  border-radius: 8px;
+  color: #f5fbf8;
+  display: inline-flex;
+  gap: 8px;
+  min-height: 40px;
+  padding: 9px 12px;
+  text-decoration: none;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease;
+  white-space: nowrap;
+}
+
+.header-actions a {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.icon-button {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.header-actions a:hover,
+.icon-button:hover,
+.scenario-grid button:hover,
+.species-actions button:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(142, 231, 216, 0.48);
+  transform: translateY(-1px);
+}
+
+.header-actions svg,
+.icon-button svg,
+.panel-heading svg,
+.species-actions svg,
+.loading-screen svg {
+  flex: 0 0 auto;
+  height: 18px;
+  width: 18px;
+}
+
+.primary {
+  background: #ff8f7e;
+  border-color: #ffb0a4;
+  color: #241211;
+  font-weight: 800;
+}
+
+.build-pill {
+  align-items: center;
+  border: 1px solid rgba(245, 251, 248, 0.14);
+  border-radius: 999px;
+  color: #cde4dd;
+  display: inline-flex;
+  min-height: 34px;
+  padding: 7px 11px;
+  white-space: nowrap;
+}
+
+.workspace {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 390px);
+  min-height: 520px;
+}
+
+.reef-scene {
+  border: 1px solid rgba(245, 251, 248, 0.14);
+  border-radius: 8px;
+  min-height: 520px;
+  overflow: hidden;
+  position: relative;
+  background: #063033;
+}
+
+.reef-scene canvas {
+  display: block;
+  height: 100%;
+  min-height: 520px;
+  width: 100%;
+}
+
+.scene-readout {
+  align-items: center;
+  bottom: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  left: 14px;
+  position: absolute;
+}
+
+.scene-readout span,
+.status-grid span {
+  background: rgba(4, 15, 18, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  color: #e9fff9;
+  padding: 6px 10px;
+}
+
+.scene-error {
+  background: rgba(63, 18, 22, 0.86);
+  border-radius: 8px;
+  color: #fff8ef;
+  left: 16px;
+  max-width: 420px;
+  padding: 12px;
+  position: absolute;
+  top: 16px;
+  z-index: 2;
+}
+
+.control-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.tool-panel {
+  background: rgba(6, 25, 27, 0.74);
+  border: 1px solid rgba(245, 251, 248, 0.13);
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+  min-width: 0;
+  padding: 14px;
+}
+
+.panel-heading {
+  align-items: center;
+  color: #dff9f3;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.panel-heading h2 {
+  font-size: 1rem;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.slider-field {
+  display: grid;
+  gap: 7px;
+  grid-template-columns: 1fr auto;
+  margin-top: 14px;
+}
+
+.slider-field span {
+  color: #c4d8d2;
+}
+
+.slider-field strong {
+  color: #fff8ef;
+}
+
+.slider-field input {
+  accent-color: #ff8f7e;
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.scenario-grid {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.scenario-grid button,
+.species-actions button {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(245, 251, 248, 0.14);
+  border-radius: 8px;
+  color: #f5fbf8;
+}
+
+.scenario-grid button {
+  min-height: 42px;
+  padding: 8px 10px;
+}
+
+.dashboard {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: minmax(260px, 0.85fr) minmax(360px, 1.5fr) minmax(
+      260px,
+      0.8fr
+    );
+}
+
+.metric-row {
+  display: grid;
+  gap: 7px;
+  margin: 12px 0;
+}
+
+.metric-row div:first-child {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.metric-row span {
+  color: #c4d8d2;
+}
+
+.metric-row strong {
+  color: #fff8ef;
+}
+
+.meter {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  height: 9px;
+  overflow: hidden;
+}
+
+.meter span {
+  border-radius: inherit;
+  display: block;
+  height: 100%;
+}
+
+.meter-coral span {
+  background: #ff8f7e;
+}
+
+.meter-teal span {
+  background: #27c0a6;
+}
+
+.meter-amber span {
+  background: #f4b45f;
+}
+
+.meter-green span {
+  background: #55b56a;
+}
+
+.meter-blue span {
+  background: #65a7ff;
+}
+
+.species-grid {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-height: 420px;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.species-card {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(245, 251, 248, 0.12);
+  border-radius: 8px;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 14px minmax(0, 1fr) auto;
+  min-height: 72px;
+  padding: 9px;
+}
+
+.species-swatch {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 999px;
+  height: 14px;
+  width: 14px;
+}
+
+.species-copy {
+  min-width: 0;
+}
+
+.species-copy h3 {
+  color: #fff8ef;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.species-copy p,
+.data-panel p {
+  color: #c4d8d2;
+  font-size: 0.82rem;
+  margin: 3px 0 0;
+}
+
+.species-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.species-actions button {
+  display: grid;
+  height: 32px;
+  padding: 0;
+  place-items: center;
+  width: 32px;
+}
+
+.duck-summary {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 14px 0 0;
+}
+
+.duck-summary div {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.duck-summary dt {
+  color: #c4d8d2;
+  font-size: 0.76rem;
+}
+
+.duck-summary dd {
+  color: #fff8ef;
+  font-weight: 800;
+  margin: 2px 0 0;
+}
+
+.toast {
+  background: #fff8ef;
+  border-radius: 8px;
+  bottom: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  color: #132829;
+  left: 50%;
+  max-width: min(520px, calc(100vw - 32px));
+  padding: 12px 14px;
+  position: fixed;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+.loading-screen,
+.fatal-error {
+  align-content: center;
+  display: grid;
+  justify-items: center;
+  min-height: 100vh;
+  padding: 24px;
+  text-align: center;
+}
+
+.loading-screen svg {
+  color: #8ee7d8;
+  height: 42px;
+  margin-bottom: 16px;
+  width: 42px;
+}
+
+.loading-screen p,
+.fatal-error p {
+  color: #c4d8d2;
+  max-width: 560px;
+}
+
+@media (max-width: 1120px) {
+  .workspace,
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .control-panel {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .app-shell {
+    padding: 10px;
+  }
+
+  .app-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .control-panel,
+  .species-grid,
+  .scenario-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reef-scene,
+  .reef-scene canvas {
+    min-height: 420px;
+  }
+
+  .header-actions {
+    width: 100%;
+  }
+
+  .header-actions a,
+  .build-pill {
+    justify-content: center;
+  }
+}

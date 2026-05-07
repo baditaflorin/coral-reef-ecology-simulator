@@ -20,4 +20,3 @@ Deploy only static files from `docs/` on GitHub Pages.
 ## Alternatives Considered
 
 - Pages frontend plus Docker backend: rejected by ADR 0001.
-

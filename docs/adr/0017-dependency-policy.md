@@ -28,4 +28,3 @@ Use production-ready dependencies only:
 ## Alternatives Considered
 
 - Custom renderer or SQL engine: rejected because mature libraries exist.
-

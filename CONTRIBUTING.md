@@ -15,4 +15,3 @@ Thanks for considering a contribution.
 - Keep the public deployment static on GitHub Pages.
 - Never commit secrets or `.env` files with real values.
 - Prefer small, focused changes with tests for simulation logic.
-

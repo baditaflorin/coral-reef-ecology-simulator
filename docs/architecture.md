@@ -39,4 +39,3 @@ C4Container
   Rel(ui, storage, "Persists local state")
   Rel(pages, ui, "Serves")
 ```
-

@@ -8,4 +8,3 @@ The app includes outbound links to:
 
 - https://github.com/baditaflorin/coral-reef-ecology-simulator
 - https://www.paypal.com/paypalme/florinbadita
-

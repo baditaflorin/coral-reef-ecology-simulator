@@ -21,4 +21,3 @@ Use Vite public env vars only for non-secret values. Commit `.env.example` with 
 ## Alternatives Considered
 
 - Runtime config endpoint: rejected by ADR 0001.
-

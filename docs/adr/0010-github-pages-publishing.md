@@ -25,4 +25,3 @@ Vite builds directly into `docs/`. The `.gitignore` excludes `dist/` but intenti
 
 - `gh-pages` branch: rejected to keep all artifacts visible on `main`.
 - GitHub Actions deployment: rejected by project constraint.
-

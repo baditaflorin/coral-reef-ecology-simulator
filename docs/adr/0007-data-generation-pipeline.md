@@ -20,4 +20,3 @@ Do not add a Go or Python data pipeline. Maintain the small species catalog as v
 ## Alternatives Considered
 
 - A Mode B generator: rejected until the project needs large empirical datasets.
-

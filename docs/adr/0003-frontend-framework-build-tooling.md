@@ -22,4 +22,3 @@ Use React, TypeScript strict mode, Vite, Tailwind CSS, Vitest, and Playwright.
 
 - SvelteKit: good fit, but React has wider library compatibility here.
 - Vanilla TypeScript: viable, but would slow down UI state work.
-

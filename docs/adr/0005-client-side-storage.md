@@ -22,4 +22,3 @@ Use `localStorage` for compact preferences and simulation state. Avoid IndexedDB
 
 - IndexedDB: more complexity than v1 needs.
 - Server persistence: rejected by ADR 0001.
-

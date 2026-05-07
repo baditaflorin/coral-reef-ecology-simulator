@@ -20,4 +20,3 @@ Use minimal browser logging. Production code avoids routine `console.log`; error
 ## Alternatives Considered
 
 - Remote log collection: rejected because it adds privacy and infrastructure cost.
-

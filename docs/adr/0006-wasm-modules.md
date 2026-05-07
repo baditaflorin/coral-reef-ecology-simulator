@@ -22,4 +22,3 @@ Lazy-load DuckDB-WASM only after the user opens the data query panel. Avoid thre
 
 - Always loading DuckDB-WASM: rejected due to payload cost.
 - Python/librosa in browser: rejected. v1 uses procedural Web Audio; offline audio analysis can be considered later.
-

@@ -31,4 +31,3 @@ The simulation engine stays independent from React and rendering so it can be un
 
 - One large app component: rejected because simulation, audio, and rendering would be hard to test.
 - Full ECS framework: rejected as too heavy for v1.
-

@@ -20,4 +20,3 @@ Use typed result objects for expected failures, React error boundaries for unexp
 ## Alternatives Considered
 
 - Throwing through UI code: rejected because it creates avoidable blank screens.
-

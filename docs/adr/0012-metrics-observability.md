@@ -20,4 +20,3 @@ Do not add analytics in v1. Observability is limited to local browser errors, sm
 ## Alternatives Considered
 
 - Plausible analytics: reasonable later, but unnecessary for v1.
-

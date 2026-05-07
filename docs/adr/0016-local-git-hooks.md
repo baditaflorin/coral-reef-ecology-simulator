@@ -27,4 +27,3 @@ Hooks:
 ## Alternatives Considered
 
 - Lefthook: good option, but plain hooks are enough for v1.
-

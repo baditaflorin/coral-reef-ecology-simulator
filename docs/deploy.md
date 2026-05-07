@@ -38,4 +38,3 @@ No custom domain is configured in v1. To add one, create `docs/CNAME`, configure
 ## GitHub Pages Notes
 
 GitHub Pages does not support `_headers` or `_redirects`. The app uses `404.html` as an SPA fallback. The service worker scope and Vite base path are both tied to `/coral-reef-ecology-simulator/`.
-

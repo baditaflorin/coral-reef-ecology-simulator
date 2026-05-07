@@ -8,7 +8,7 @@
     "dev": "vite --host 0.0.0.0",
     "build": "node scripts/clean-pages.mjs && vite build && node scripts/postbuild-pages.mjs",
     "preview": "vite preview --host 0.0.0.0",
-    "pages:preview": "npx http-server docs -p 4173 -c-1",
+    "pages:preview": "PORT=4173 node scripts/serve-pages.mjs",
     "data:validate": "tsx scripts/validate-data.ts",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -52,4 +52,3 @@
     "vitest": "^4.0.8"
   }
 }
-

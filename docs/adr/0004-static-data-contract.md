@@ -27,4 +27,3 @@ The frontend fetches these files with a versioned cache key. Breaking schema cha
 
 - DuckDB/Parquet artifacts: rejected for the small v1 catalog.
 - Runtime API: rejected by ADR 0001.
-

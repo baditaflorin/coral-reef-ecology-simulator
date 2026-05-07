@@ -12,4 +12,3 @@ const generatedPaths = [
 for (const path of generatedPaths) {
   rmSync(path, { force: true, recursive: true });
 }
-
