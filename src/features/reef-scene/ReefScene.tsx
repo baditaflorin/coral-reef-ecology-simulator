@@ -65,6 +65,7 @@ export function ReefScene({ snapshot, onWebGpuStatus }: ReefSceneProps) {
           canvas,
           antialias: true,
           alpha: false,
+          preserveDrawingBuffer: true,
         });
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         renderer.setClearColor(0x062f33, 1);

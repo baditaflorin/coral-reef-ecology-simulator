@@ -1,4 +1,6 @@
 import type { ReefLogRecord } from "../ecology/types";
+import duckdbWorkerMvp from "@duckdb/duckdb-wasm/dist/duckdb-browser-mvp.worker.js?url";
+import duckdbWasmMvp from "@duckdb/duckdb-wasm/dist/duckdb-mvp.wasm?url";
 
 export interface DuckDbSummary {
   samples: number;
@@ -18,7 +20,12 @@ export async function summarizeLogWithDuckDb(
   }
 
   const duckdb = await import("@duckdb/duckdb-wasm");
-  const bundles = duckdb.getJsDelivrBundles();
+  const bundles = {
+    mvp: {
+      mainModule: duckdbWasmMvp,
+      mainWorker: duckdbWorkerMvp,
+    },
+  };
   const bundle = await duckdb.selectBundle(bundles);
   if (!bundle.mainWorker) {
     throw new Error("DuckDB-WASM did not provide a worker bundle.");
