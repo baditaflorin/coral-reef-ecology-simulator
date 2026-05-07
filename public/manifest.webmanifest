@@ -1,0 +1,12 @@
+{
+  "name": "Coral Reef Ecology Simulator",
+  "short_name": "Reef Simulator",
+  "description": "Interactive reef simulator where species, climate stress, visuals, and sound reveal trophic cascade dynamics.",
+  "start_url": "/coral-reef-ecology-simulator/",
+  "scope": "/coral-reef-ecology-simulator/",
+  "display": "standalone",
+  "background_color": "#061618",
+  "theme_color": "#063033",
+  "icons": []
+}
+
