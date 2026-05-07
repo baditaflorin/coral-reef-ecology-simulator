@@ -18,15 +18,30 @@ function gitValue(command: string, fallback: string): string {
   }
 }
 
+const generatedPagesPathspecs = [
+  "':(exclude)docs/assets/**'",
+  "':(exclude)docs/index.html'",
+  "':(exclude)docs/404.html'",
+  "':(exclude)docs/sw.js'",
+  "':(exclude)docs/manifest.webmanifest'",
+  "':(exclude)docs/data/**'",
+].join(" ");
+const sourceCommit = gitValue(
+  `git log -1 --format=%h -- . ${generatedPagesPathspecs}`,
+  "dev",
+);
+const sourceCommitDate =
+  sourceCommit === "dev"
+    ? "dev"
+    : gitValue(`git show -s --format=%cI ${sourceCommit}`, "dev");
+
 export default defineConfig({
   base: "/coral-reef-ecology-simulator/",
   plugins: [react()],
   define: {
     __APP_VERSION__: JSON.stringify(packageJson.version),
-    __APP_COMMIT__: JSON.stringify(
-      gitValue("git rev-parse --short HEAD", "dev"),
-    ),
-    __APP_BUILT_AT__: JSON.stringify(new Date().toISOString()),
+    __APP_COMMIT__: JSON.stringify(sourceCommit),
+    __APP_BUILT_AT__: JSON.stringify(sourceCommitDate),
   },
   build: {
     outDir: "docs",
